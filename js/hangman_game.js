@@ -2,6 +2,7 @@ import React from 'react';
 import _ from 'underscore';
 import HangmanDrawing from './hangman_drawing';
 import HangmanKeyboard from './keyboard';
+import LetterSlots from './letter_slots';
 import words from './words';
 
 export default React.createClass({
@@ -35,8 +36,12 @@ export default React.createClass({
   render() {
     return (
       <div>
+        <h1>Hang Man</h1>
         <HangmanDrawing
           strikes={this.state.strikes}/>
+        <LetterSlots
+          word={this.state.word}
+          guesses={this.state.guesses}/>
         <HangmanKeyboard
           onPress={this.checkLetter}
           disabledLetters={this.state.guesses}/>

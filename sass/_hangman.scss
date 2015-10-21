@@ -2,6 +2,8 @@
 .hangman-sprites {
   position: relative;
   height: 200px;
+  width: 110px;
+  margin: auto;
 
   div {
     background: url('../images/hangman-sprite.png') no-repeat 0 0;

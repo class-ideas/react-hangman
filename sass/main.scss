@@ -3,7 +3,22 @@
 
 @import "hangman";
 @import "keyboard";
+@import "letter_slots";
 
 body {
-  /*background: #e2ebf3;*/
+  background: #e2ebf3;
+  font-family: Cabin;
+}
+
+.react-wrapper {
+  width: 416px;
+  background: white;
+  padding: 20px;
+  border-radius: 4px;
+  margin: 20px auto;
+
+  h1 {
+    margin: 10px;
+    text-align: center;
+  }
 }

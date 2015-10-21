@@ -2020,7 +2020,9 @@
 
 .hangman-sprites {
   position: relative;
-  height: 200px; }
+  height: 200px;
+  width: 110px;
+  margin: auto; }
   .hangman-sprites div {
     background: url("../images/hangman-sprite.png") no-repeat 0 0;
     width: 110px;
@@ -2062,7 +2064,33 @@
   .hangman-keyboard button[disabled] {
     opacity: 0.5; }
 
+.letter-slots {
+  text-align: center;
+  margin-bottom: 20px; }
+  .letter-slots .letter-slot {
+    display: inline-block;
+    border-bottom: 2px solid #345;
+    color: #678;
+    width: 30px;
+    height: 30px;
+    margin: 3px;
+    text-transform: uppercase;
+    text-align: center;
+    font-size: 24px;
+    vertical-align: bottom; }
+
 body {
-  /*background: #e2ebf3;*/ }
+  background: #e2ebf3;
+  font-family: Cabin; }
+
+.react-wrapper {
+  width: 416px;
+  background: white;
+  padding: 20px;
+  border-radius: 4px;
+  margin: 20px auto; }
+  .react-wrapper h1 {
+    margin: 10px;
+    text-align: center; }
 
 /*# sourceMappingURL=main.css.map */
