@@ -90,6 +90,8 @@ gulp.task('hint:html', function() {
     .pipe(htmlhint.failReporter());
 });
 
+gulp.task('lint', ['style:js', 'hint:js', 'hint:html']);
+
 gulp.task('watch', function() {
   gulp.watch('./sass/*.scss', ['sass']);
   gulp.watch(['./js/*.js', './package.json'], ['browserify']);
@@ -107,6 +109,7 @@ gulp.task('server', function () {
 gulp.task('default', ['sass',
                       'fonts',
                       'normalize',
+                      'lint',
                       'browserify']);
 
 gulp.task('start', ['default', 'watch', 'server']);

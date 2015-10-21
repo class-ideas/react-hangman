@@ -69,17 +69,21 @@ export default React.createClass({
     return (
       <div>
         <h1>{this.getTitle()}</h1>
+        
         <HangmanDrawing
           won={this.state.won}
           strikes={this.state.strikes}/>
+        
         <LetterSlots
           word={this.state.word}
           reveal={this.state.over}
           guesses={this.state.guesses}/>
+        
         <HangmanKeyboard
           onPress={this.checkLetter}
           enabled={!this.state.over && !this.state.won}
           disabledLetters={this.state.guesses}/>
+        
         <button 
           className={this.newGameClass()}
           disabled={!this.state.over && !this.state.won}
