@@ -6,9 +6,20 @@ const ROW_TWO = 'nopqrstuvwxyz'.split('');
 
 export default React.createClass({
 
+  handleClick(letter) {
+    this.props.onPress(letter);
+  },
+
   getButton(letter) {
     let disabled = _.includes(this.props.disabledLetters, letter);
-    return <button key={letter} disabled={disabled}>{letter}</button>;
+    return (
+      <button 
+        key={letter}
+        onClick={this.handleClick.bind(this, letter)}
+        disabled={disabled}>
+        {letter}
+      </button>
+    );
   },
 
   getRow(row) {
