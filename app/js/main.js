@@ -133,12 +133,13 @@ exports['default'] = _react2['default'].createClass({
 
   checkLetter: function checkLetter(letter) {
     var _state2 = this.state;
+    var word = _state2.word;
     var strikes = _state2.strikes;
     var guesses = _state2.guesses;
     var over = _state2.over;
     var won = _state2.won;
 
-    if (_underscore2['default'].contains(this.state.word, letter)) {} else {
+    if (_underscore2['default'].contains(word, letter)) {} else {
       strikes++;
     }
 
@@ -146,7 +147,7 @@ exports['default'] = _react2['default'].createClass({
 
     won = this.hasWon();
 
-    console.log('won', won);
+    console.log('x');
 
     if (strikes >= 6 && !won) {
       strikes = 6;

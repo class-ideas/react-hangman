@@ -30,9 +30,9 @@ export default React.createClass({
   },
 
   checkLetter(letter) {
-    let {strikes, guesses, over, won} = this.state;
+    let {word, strikes, guesses, over, won} = this.state;
 
-    if (_.contains(this.state.word,letter)) {
+    if (_.contains(word,letter)) {
 
     } else {
       strikes++;
@@ -41,8 +41,6 @@ export default React.createClass({
     guesses.push(letter);
 
     won = this.hasWon();
-
-    console.log('won', won);
 
     if (strikes >= 6 && !won) {
       strikes = 6;
