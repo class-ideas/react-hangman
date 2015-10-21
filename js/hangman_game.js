@@ -62,6 +62,11 @@ export default React.createClass({
     }
   },
 
+  newGameClass() {
+    let playing = (!this.state.over && !this.state.won);
+    return playing ? 'new-game' : 'new-game shown';
+  },
+
   render() {
     return (
       <div>
@@ -77,6 +82,12 @@ export default React.createClass({
           onPress={this.checkLetter}
           enabled={!this.state.over && !this.state.won}
           disabledLetters={this.state.guesses}/>
+        <button 
+          className={this.newGameClass()}
+          disabled={!this.state.over && !this.state.won}
+          onClick={this.newGame}>
+          New Game
+        </button>
       </div>
     );
   }

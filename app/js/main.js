@@ -166,6 +166,11 @@ exports['default'] = _react2['default'].createClass({
     }
   },
 
+  newGameClass: function newGameClass() {
+    var playing = !this.state.over && !this.state.won;
+    return playing ? 'new-game' : 'new-game shown';
+  },
+
   render: function render() {
     return _react2['default'].createElement(
       'div',
@@ -185,7 +190,15 @@ exports['default'] = _react2['default'].createClass({
       _react2['default'].createElement(_keyboard2['default'], {
         onPress: this.checkLetter,
         enabled: !this.state.over && !this.state.won,
-        disabledLetters: this.state.guesses })
+        disabledLetters: this.state.guesses }),
+      _react2['default'].createElement(
+        'button',
+        {
+          className: this.newGameClass(),
+          disabled: !this.state.over && !this.state.won,
+          onClick: this.newGame },
+        'New Game'
+      )
     );
   }
 
