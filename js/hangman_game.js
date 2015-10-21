@@ -1,5 +1,6 @@
 import React from 'react';
 import HangmanDrawing from './hangman_drawing';
+import HangmanKeyboard from './keyboard';
 
 export default React.createClass({
 
@@ -20,7 +21,12 @@ export default React.createClass({
   },
 
   render() {
-    return <HangmanDrawing strikes={this.state.strikes}/>;
+    return (
+      <div>
+        <HangmanDrawing strikes={this.state.strikes}/>
+        <HangmanKeyboard disabledLetters={['j','d']}/>
+      </div>
+    );
   }
 
 });

@@ -2019,7 +2019,8 @@
   content: ""; }
 
 .hangman-sprites {
-  position: relative; }
+  position: relative;
+  height: 200px; }
   .hangman-sprites div {
     background: url("../images/hangman-sprite.png") no-repeat 0 0;
     width: 110px;
@@ -2048,7 +2049,20 @@
   .hangman-sprites .gamewon {
     background-position: -262px -188px; }
 
+.hangman-keyboard button {
+  width: 30px;
+  line-height: 23px;
+  background: #abc;
+  border: none;
+  border-radius: 4px;
+  color: #345;
+  margin: 1px;
+  text-transform: uppercase;
+  font-weight: bold; }
+  .hangman-keyboard button[disabled] {
+    opacity: 0.5; }
+
 body {
-  background: #e2ebf3; }
+  /*background: #e2ebf3;*/ }
 
 /*# sourceMappingURL=main.css.map */
