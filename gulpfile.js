@@ -4,7 +4,6 @@ var source = require('vinyl-source-stream');
 var buffer = require('vinyl-buffer');
 var browserify = require('browserify');
 var babel = require('babelify');
-var react = require('reactify');
 var sass = require('gulp-sass');
 var plumber = require('gulp-plumber');
 var notify  = require('gulp-notify');
@@ -55,7 +54,6 @@ gulp.task('normalize', function() {
 gulp.task('browserify', function() {
   return browserify('./js/main.js', {debug: true})
     .transform(babel)
-    .transform(react)
     .bundle()
     .on('error', browserifyError)
     .pipe(source('./main.js'))

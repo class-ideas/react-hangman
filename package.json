@@ -25,7 +25,6 @@
     "jshint-stylish": "^2.0.1",
     "node-bourbon": "^4.2.3",
     "node-font-awesome": "^1.0.2",
-    "reactify": "^1.1.1",
     "uglifyify": "^3.0.1",
     "vinyl-buffer": "^1.0.0",
     "vinyl-source-stream": "^1.1.0",
