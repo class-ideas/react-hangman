@@ -13,5 +13,9 @@
     text-align: center;
     font-size: 24px;
     vertical-align: bottom;
+
+    &.revealed {
+      color: lighten(#678, 40%);
+    }
   }
 }

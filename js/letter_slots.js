@@ -4,10 +4,20 @@ import _ from 'underscore';
 export default React.createClass({
 
   getSlot(letter, index) {
-    let contents = _.contains(this.props.guesses, letter) 
-                 ? letter 
-                 : ' ';
-    return <div key={index} className='letter-slot'>{contents}</div>;
+    let classNames = ['letter-slot'];
+    let contents = _.contains(this.props.guesses, letter) ? letter : ' ';
+
+    if (contents === ' ' && this.props.reveal) {
+      classNames.push('revealed');
+      contents = letter;
+    }
+    return (
+      <div 
+        key={index} 
+        className={classNames.join(' ')}>
+        {contents}
+      </div>
+    );
   },
 
   getSlots() {

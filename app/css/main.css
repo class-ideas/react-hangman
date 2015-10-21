@@ -2078,6 +2078,8 @@
     text-align: center;
     font-size: 24px;
     vertical-align: bottom; }
+    .letter-slots .letter-slot.revealed {
+      color: #d8dde2; }
 
 body {
   background: #e2ebf3;

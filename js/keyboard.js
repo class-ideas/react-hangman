@@ -7,7 +7,9 @@ const ROW_TWO = 'nopqrstuvwxyz'.split('');
 export default React.createClass({
 
   handleClick(letter) {
-    this.props.onPress(letter);
+    if (this.props.enabled) {
+      this.props.onPress(letter);
+    }
   },
 
   getButton(letter) {
