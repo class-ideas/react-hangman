@@ -99,7 +99,7 @@ gulp.task('watch', function() {
   gulp.watch('./js/**/*.js', ['hint:js', ['style:js']]);
 });
 
-gulp.task('server', function () {
+gulp.task('server', ['default'], function () {
   return gulp.src('app')
     .pipe(server({
       livereload: true
