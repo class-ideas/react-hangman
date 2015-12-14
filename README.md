@@ -1,11 +1,5 @@
 # React Hangman
 
-### Run
+Hangman game made with React.js
 
-```shell
-git clone git@github.com:class-ideas/react-hangman.git
-cd react-hangman
-npm install
-gulp start
-```
-Then visit localhost:8000
+[Demo](http://class-ideas.github.io/react-hangman/)
