@@ -1,9 +1,9 @@
 import React from 'react';
 import _ from 'underscore';
-import HangmanDrawing from './hangman_drawing';
-import HangmanKeyboard from './keyboard';
-import LetterSlots from './letter_slots';
-import words from './words';
+import HangmanDrawing from '../components/hangman_drawing';
+import HangmanKeyboard from '../components/keyboard';
+import LetterSlots from '../components/letter_slots';
+import words from '../words';
 
 export default React.createClass({
 
