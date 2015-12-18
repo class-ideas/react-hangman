@@ -1,9 +1,12 @@
 import ReactDom from 'react-dom';
 import React from 'react';
-
-import HangmanGame from './containers/hangman_game';
+import {Provider} from 'react-redux';
+import store from './store';
+import Hangman from './containers';
 
 ReactDom.render(
-  <HangmanGame/>,
+  <Provider store={store}>
+    <Hangman/>
+  </Provider>,
   document.querySelector('.react-wrapper')
 );
