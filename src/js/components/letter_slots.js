@@ -1,37 +1,26 @@
 import React from 'react';
-import _ from 'underscore';
+import classes from 'classnames';
 
-export default React.createClass({
-
-  getSlot(letter, index) {
-    let {guesses, reveal} = this.props;
-    let classNames = ['letter-slot'];
-    let contents = _.contains(guesses, letter) ? letter : ' ';
-
-    if (contents === ' ' && reveal) {
-      classNames.push('revealed');
-      contents = letter;
-    }
+const getSlots = ({word, guesses, reveal}) => (
+  word.split('').map((letter, index) => {
+    let className = classes('letter-slot', { 
+      revealed: reveal && guesses.indexOf(letter) === -1
+    });
+    let content = reveal || guesses.indexOf(letter) >= 0 ? letter : ' '
     return (
       <div 
         key={index} 
-        className={classNames.join(' ')}>
-        {contents}
+        className={className}>
+        {content}
       </div>
     );
-  },
+  })
+);
 
-  getSlots() {
-    let letters = this.props.word.split('');
-    return letters.map(this.getSlot);
-  },
+const LetterSlots = (props) => (
+  <div className='letter-slots'>
+    {getSlots(props)}
+  </div>
+);
 
-  render() {
-    return (
-      <div className='letter-slots'>
-        {this.getSlots()}
-      </div>
-    );
-  }
-
-});
+export default LetterSlots;
